@@ -1,5 +1,5 @@
 
-# Generate string for Kolmogorov complexity calculation purposes
+# generate-string.py: generate string for Kolmogorov complexity calculation purposes
 
 import string, random, sys
 
@@ -15,7 +15,7 @@ def generate_random_string(size):
     
 def main(argv):
     
-    # use:   python generate_string.py rnd 10_000_000 > example.txt
+    # use:   python generate-string.py rnd 10_000_000 > example.txt
     try:
         size = int(argv[1])
         
