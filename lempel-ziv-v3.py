@@ -101,6 +101,9 @@ def lz76_complexity(s):
 #   INPUT HANDLING
 # -----------------------------------------------------------
 def read_string():
+    
+    print('\n\nlempel-ziv-v3.py : Fast Lempel-Ziv Complexity (LZ76) using Suffix Array + LCP')
+    print('                        Complexity: O(N log N)  --> suitable for millions of characters\n')
     print("Menù:\n")
     print("Read from [F]ile\n")
     print("Read from [K]eyboard\n")

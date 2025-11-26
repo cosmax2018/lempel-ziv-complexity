@@ -36,6 +36,7 @@ def complexityLempelZiv(s):
 	
 def main():
 	
+	print('\n\nLempel-ziv-v1.py : Lempel-Ziv v.1 - complexity index with Numba and Numpy\n')
 	print('Menù:')
 	print()
 	print('Read from [F]ile')

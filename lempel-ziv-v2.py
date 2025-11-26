@@ -6,7 +6,6 @@ import time
 import numpy as np
 from numba import njit
 
-
 @njit(cache=True, nogil=True)
 def complexityLempelZiv(s):
     complexity = 1
@@ -40,6 +39,8 @@ def complexityLempelZiv(s):
 
 
 def read_string():
+    
+    print('\n\nLempel-ziv-v2.py : Lempel-Ziv v.2 - complexity index with Numba and Numpy\n')
     print("Menù:\n")
     print("Read from [F]ile\n")
     print("Read from [K]eyboard\n")
