@@ -2,9 +2,9 @@
 # Lempel-Ziv complexity index with Numba and Numpy
 
 import numpy as np
-from numba import jit
+from numba import njit
 
-@jit(nopython=True,nogil=True)
+@njit(nopython=True,nogil=True)
 def complexityLempelZiv(s):
 	complexity				= 1
 	prefix_length			= 1
@@ -54,6 +54,14 @@ def main():
 	elif x.upper() == 'K':
 		s = input('give me a string: ')
 	
-	print(f'\n\nLempel-Ziv complexity index for \n\n{s[:256]}... \n\nis {complexityLempelZiv(np.array(tuple(s)))}')
+	arr = np.frombuffer(s.encode('utf-8'), dtype=np.uint8)
+    t0 = time.perf_counter()
+    c = complexityLempelZiv(arr)
+    t1 = time.perf_counter()
+    elapsed = t1 - t0
+    
+	print(f'\n\nLempel-Ziv complexity index for \n\n{s[:256]}... \n\nis {c}')
+    print(f"\nElapsed time: {elapsed:.6f} seconds\n")
+    
 	
 main()
