@@ -1,6 +1,8 @@
+#
+# lempel-ziv-v1.py : Lempel-Ziv complexity index with Numba and Numpy
+#
 
-# Lempel-Ziv complexity index with Numba and Numpy
-
+import time
 import numpy as np
 from numba import njit
 
@@ -55,13 +57,13 @@ def main():
 		s = input('give me a string: ')
 	
 	arr = np.frombuffer(s.encode('utf-8'), dtype=np.uint8)
-    t0 = time.perf_counter()
-    c = complexityLempelZiv(arr)
-    t1 = time.perf_counter()
-    elapsed = t1 - t0
-    
+	t0 = time.perf_counter()
+	c = complexityLempelZiv(arr)
+	t1 = time.perf_counter()
+	elapsed = t1 - t0
+	
 	print(f'\n\nLempel-Ziv complexity index for \n\n{s[:256]}... \n\nis {c}')
-    print(f"\nElapsed time: {elapsed:.6f} seconds\n")
+	print(f"\nElapsed time: {elapsed:.6f} seconds\n")
     
 	
 main()

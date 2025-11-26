@@ -1,9 +1,9 @@
-# Fast Lempel-Ziv Complexity (LZ76) using Suffix Array + LCP
-# Complexity: O(N log N)  --> suitable for millions of characters
+#
+# lempel-ziv-v3.py : Fast Lempel-Ziv Complexity (LZ76) using Suffix Array + LCP
+#                    Complexity: O(N log N)  --> suitable for millions of characters
 
 import sys, time
 import numpy as np
-
 
 # -----------------------------------------------------------
 #   SUFFIX ARRAY (Skew algorithm / prefix doubling)

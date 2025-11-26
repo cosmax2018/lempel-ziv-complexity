@@ -1,5 +1,6 @@
-
-# Lempel-Ziv-v2.py complexity index with Numba and Numpy
+#
+# lempel-ziv-v2.py : Lempel-Ziv complexity index with Numba and Numpy
+#
 
 import time
 import numpy as np
