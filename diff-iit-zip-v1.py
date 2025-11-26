@@ -48,23 +48,31 @@ states = list(product([0, 1], repeat=3))
 # A(t+1) = B(t) XOR C(t)
 # B(t+1) = A(t)
 # C(t+1) = A(t) AND B(t)
-def evolve(state):
+def evolve_v1(state):
     A, B, C = state
     A_new = B ^ C
     B_new = A
     C_new = A & B
     return (A_new, B_new, C_new)
+    
+def evolve_v2(state):
+    A, B, C = state
+    A_new = (B + C) % 2      # somma modulo 2
+    B_new = (A + C) % 2
+    C_new = (A ^ B)           # XOR
+    return (A_new, B_new, C_new)
+    
 
 # --------------------------
 # Genera sequenza di stati
 # --------------------------
 steps = 8
 sequence = []
-current_state = (0, 0, 0)
+current_state = (1, 0, 0)
 
 for _ in range(steps):
     sequence.append(current_state)
-    current_state = evolve(current_state)
+    current_state = evolve_v2(current_state)
 
 # Converti in stringa binaria per LZ
 seq_str = ''.join(''.join(str(bit) for bit in s) for s in sequence)
